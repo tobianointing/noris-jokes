@@ -1,0 +1,10 @@
+@use "../../assets/styles/variables" as *;
+
+.category__wrapper{
+    padding: 4em 10%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, minmax(206px, 1fr));
+    gap: 1.5em;
+    background-color: $white;
+}

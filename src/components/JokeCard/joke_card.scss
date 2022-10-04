@@ -1,0 +1,18 @@
+@use "../../assets/styles/variables" as *;
+
+
+.joke_card_wrapper {
+    .header {
+        display: flex;
+        gap: .8em;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: $black;
+    }
+
+    .body{
+        color: $black2;
+        margin: 1em 0; 
+
+    }
+}

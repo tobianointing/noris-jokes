@@ -1,0 +1,17 @@
+@use "../../assets/styles/variables" as *;
+
+
+.view_all__card {
+    padding: 1em;
+    background-color: $white;
+    font-size: .875rem;
+    font-weight: 600;
+    color: $brown2;
+    border: 1px solid $brown2;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  

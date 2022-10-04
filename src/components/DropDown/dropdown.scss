@@ -1,0 +1,56 @@
+@use "../../assets/styles/variables" as *;
+
+.dropdown__wrapper {
+  display: flex;
+  align-items: center;
+  background-color: $brown1;
+  gap: 0.8rem;
+  padding: 0 0.8rem;
+  position: relative;
+  cursor: pointer;
+
+  
+
+  .path__img {
+    margin-left: 2em;
+  }
+
+  .dropdown__menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    color: $black2;
+    background-color: $white2;
+    padding: 1em .2em 0;
+    border: 1px solid $white-three;
+    border-radius: 3px;
+    display: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      border-style: solid;
+      right: 12px;
+      top: -13px;
+      border-width: 10px 0 10px 10px;
+      transform: translate(80%, -50%);
+      transform: rotate(-90deg);
+      border-color: transparent transparent transparent $white2;
+    }
+
+    li {
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-bottom: 1px solid $ash;
+      padding: 0 1em 1em;
+      margin-bottom: 1em;
+      cursor: pointer;
+
+      &:last-of-type {
+        padding: 0 1em;
+        border-bottom: none;
+      }
+    }
+  }
+}

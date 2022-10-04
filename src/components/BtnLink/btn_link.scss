@@ -1,0 +1,11 @@
+@use "../../assets/styles/variables" as *;
+
+
+.btn__link{
+    display: flex;
+    gap: 1em;
+
+    p {
+        color: $brown1;
+    }
+}

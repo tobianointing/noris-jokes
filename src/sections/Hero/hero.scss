@@ -1,0 +1,55 @@
+@use "../../assets/styles/variables" as *;
+
+.hero {
+  background-image: url("../../assets//images1/bitmap@3x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: grid;
+  place-content: center;
+
+  .search__wrapper {
+    position: relative;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+    font-weight: normal;
+    color: $brown1;
+    text-align: center;
+  }
+
+  .hero__small_text {
+    color: $white2;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    width: 100%;
+    margin: 0.8em 0 2em;
+  }
+
+  input {
+    width: 450px;
+    background: transparent;
+    border: 1px solid $white2;
+    outline: none;
+    padding: 0.7em 0.8em;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border-radius: 5px;
+    position: relative;
+    background-image: url("../../assets/images1/search-copy.png");
+    background-repeat: no-repeat;
+    background-position: 97% center;
+    color: $white-three;
+
+    &:focus {
+      background-color: $white2;
+      background-image: url("../../assets/images2/search-copy.png");
+      font-weight: 500;
+      color: $black2;
+    }
+  }
+}

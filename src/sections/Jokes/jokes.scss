@@ -1,0 +1,11 @@
+@use "../../assets/styles/variables" as *;
+
+.jokes__wrapper {
+  position: relative;
+  padding: 0 10%;
+  background-color: $white;
+}
+
+.jokes_cards__wrapper {
+  border-top: 1px solid $ash;
+}

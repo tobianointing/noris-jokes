@@ -1,0 +1,8 @@
+@mixin font-face ($path, $style, $weight) {
+    @font-face {
+        font-family: "Montserrat";
+        font-style: $style;
+        font-weight: $weight;
+        src: url($path) format('truetype');
+    }
+} 

@@ -1,0 +1,15 @@
+@use "../../assets/styles/variables" as *;
+
+.category_pill_wrapper {
+    background-color: $weird-green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white2;
+    width: fit-content;
+    padding: .3em .8em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    font-size: .8rem;
+    font-weight: 500;
+}

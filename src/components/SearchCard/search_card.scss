@@ -1,0 +1,44 @@
+@use "../../assets/styles/variables" as *;
+
+.search__card {
+  position: absolute;
+  background-color: $white2;
+  right: 0;
+  left: 0;
+  top: 60px;
+  padding: 0 0.8em 1em;
+  border: 1px solid $ash;
+  display: none;
+
+  &:after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    left: 12px;
+    top: -13px;
+    border-width: 10px 0 10px 10px;
+    transform: translate(80%, -50%);
+    transform: rotate(-90deg);
+    border-color: transparent transparent transparent $white2;
+  }
+
+  li {
+    display: flex;
+    color: $black;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0;
+    border-bottom: 1px solid $ash;
+
+    &:last-of-type {
+      padding: 1em 0 0;
+      border-bottom: unset;
+    }
+
+    .search__card_text {
+      color: $ash;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+}

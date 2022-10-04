@@ -1,0 +1,22 @@
+@use "../../assets/styles/variables" as *;
+
+header {
+  background-color: $black2;
+  color: $white;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 15em;
+
+  nav {
+    display: flex;
+    font-weight: 600;
+    font-size: .9rem;
+    gap: 3em;
+
+    a {
+      color: $white;
+      text-decoration: none;
+      margin:  1.2em 0;
+    }
+  }
+}
