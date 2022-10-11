@@ -2,31 +2,32 @@ import React from "react"
 import BtnLink from "../BtnLink/BtnLink"
 import "./joke_card.scss"
 import socialIcon from "../../assets/images1/green-light-copy-4.png"
+import { JokeType } from "../../types"
 
+type Props = {
+  joke: JokeType
+  setJokeId: React.Dispatch<string|null>
+}
 
-type Props = {}
+export default function JokeCard(props: Props) {
+  const truncateString = (string = '', maxLength = 500) => 
+  string.length > maxLength 
+    ? `${string.substring(0, maxLength)}…`
+    : string
 
-export default function JokeCard({}: Props) {
   return (
     <div className="joke_card_wrapper">
-      <div className="header">
-    <img src={socialIcon} alt="" />
-        <h2 className="title">Police Joke</h2>
+      <div className="joke__card_header">
+        <img src={socialIcon} alt="" />
+        <h2 className="title">{props.joke.categories[0]} JOKE</h2>
       </div>
 
-      <div className="body">
-        molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam
-        blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!
-        Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
-        molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit
-        sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
-        quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi
-        at sunt excepturi expedita sint? Sed quibusdam recusandae alias error harum maxime adipisci
-        amet laborum. Perspiciatis
+      <div className="joke__card_body">
+        {truncateString(props.joke.value)}
       </div>
 
-      <div className="footer">
-        <BtnLink />
+      <div className="joke__card_footer">
+        <BtnLink text={"SEE STATS"} onClick={() => props.setJokeId(props.joke.id)} />
       </div>
     </div>
   )

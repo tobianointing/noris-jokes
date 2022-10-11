@@ -2,7 +2,7 @@
 
 
 .view_all__card {
-    padding: 1em;
+    padding: 1em 3em;
     background-color: $white;
     font-size: .875rem;
     font-weight: 600;
@@ -13,5 +13,6 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    // width: 206px;
   }
   

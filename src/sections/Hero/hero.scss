@@ -52,4 +52,37 @@
       color: $black2;
     }
   }
+
+  @media (max-width: 450px) {
+    .hero__title {
+      font-size: 2.5rem;
+    }
+
+    .hero__small_text {
+      font-size: 1.15rem;
+    }
+
+    input {
+      width: 300px;
+      font-size: 0.8rem;
+      padding: 1em .9em;
+    }
+  }
+
+  @media (max-width: 375px) {
+
+    .hero__title {
+      font-size: 2rem;
+    }
+
+    .hero__small_text {
+      font-size: 0.95rem;
+    }
+
+    input {
+      width: 260px;
+      font-size: 0.7rem;
+      padding: 0.9em 0.8em;
+    }
+  }
 }

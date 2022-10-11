@@ -1,9 +1,14 @@
 import "./category_card.scss"
 
-export default function CategoryCard(){
+interface Props {
+    title: string
+    onClick: () => void
+}
+
+export default function CategoryCard(props: Props){
     return (
-        <div className="category__card">
-            ADULT JOKES
+        <div className="category__card" onClick={props.onClick}>
+            {props.title} Jokes
         </div>
     )
 }

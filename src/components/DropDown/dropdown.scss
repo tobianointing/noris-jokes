@@ -9,23 +9,32 @@
   position: relative;
   cursor: pointer;
 
-  
 
   .path__img {
     margin-left: 2em;
+
+    @media (max-width: 375px) {
+      margin-left: .8em;
+    }
+
   }
 
   .dropdown__menu {
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 0;
     left: 0;
     color: $black2;
     background-color: $white2;
     padding: 1em .2em 0;
     border: 1px solid $white-three;
-    border-radius: 3px;
-    display: none;
+    transform: translateY(-139%);
+    opacity: 0;
+    transition: all .3s;
+
+    @media (max-width: 375px) {
+      top: 50px;
+    }
 
     &:after {
       content: "";
@@ -47,10 +56,22 @@
       margin-bottom: 1em;
       cursor: pointer;
 
+      @media (max-width: 375px) {
+        font-size: 0.65rem;
+      }
+
       &:last-of-type {
         padding: 0 1em;
         border-bottom: none;
       }
     }
   }
+
+
+  .drop_down__open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
 }
+

@@ -1,20 +1,37 @@
-import React from "react"
+import React, { useState } from "react"
+import Skeleton from "react-loading-skeleton"
 import CategoryPill from "../../components/CategoryPill/CategoryPill"
 import JokeCard from "../../components/JokeCard/JokeCard"
+import ViewAllCard from "../../components/ViewAllCard/ViewAllCard"
 import "./jokes.scss"
+import { JokeType } from "../../types"
 
-type Props = {}
+type Props = {
+  data: JokeType[] | null
+  setJokeId: React.Dispatch<React.SetStateAction<string | null>>
+  selectedCategory: string
+}
 
-export default function Jokes({}: Props) {
+export default function Jokes(props: Props) {
+  const [count, setCount] = useState(6)
+
   return (
     <section className="jokes__wrapper">
       <div className="jokes_cards__wrapper">
-        <CategoryPill />
+        <CategoryPill text={props.selectedCategory} />
 
         <div className="cards">
-          <JokeCard />
-          <JokeCard />
-          <JokeCard />
+          {props?.data
+            ? props.data
+                .slice(0, count)
+                .map((joke: any) => (
+                  <JokeCard joke={joke} key={joke.id} setJokeId={props.setJokeId} />
+                ))
+            : [...Array(4)].map((joke: any, index) => <Skeleton key={index} height={300} />)}
+        </div>
+
+        <div className="more__btn">
+          <ViewAllCard onClick={() => setCount(props?.data?.length ?? 4)} />
         </div>
       </div>
     </section>

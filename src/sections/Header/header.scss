@@ -5,18 +5,96 @@ header {
   color: $white;
   display: flex;
   justify-content: flex-end;
-  padding-right: 15em;
 
   nav {
     display: flex;
     font-weight: 600;
-    font-size: .9rem;
+    font-size: 0.9rem;
     gap: 3em;
 
-    a {
-      color: $white;
-      text-decoration: none;
-      margin:  1.2em 0;
+    .open_btn,
+    .close_btn {
+      display: none;
+    }
+
+    .main__link {
+      display: flex;
+      gap: 3em;
+      padding: 1.4em 0;
+
+      a {
+        color: $white;
+        text-decoration: none;
+      }
     }
   }
+}
+
+@media (max-width: 450px) {
+  header {
+    display: block;
+
+    nav {
+      font-size: 0.6rem;
+      justify-content: space-between;
+
+      .open_btn {
+        display: block;
+        padding: 2em 0;
+        cursor: pointer;
+      }
+
+      .close_btn {
+        display: block;
+        color: $black;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+      }
+
+      .main__link {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        background-color: $white;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        transform: translateX(-100%);
+        transition: all 0.5s;
+
+        a {
+          color: $black;
+
+          &:hover {
+            color: $brown1;
+          }
+        }
+      }
+
+      .open {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  header {
+    nav {
+      font-size: 0.6rem;
+
+      .open_btn {
+        padding: 1.4em 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
 }

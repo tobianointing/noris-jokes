@@ -1,11 +1,12 @@
 @use "../../assets/styles/variables" as *;
 
 .category__card {
-  padding: 1em;
+  padding: 1.1em;
   text-align: center;
   background-color: $weird-green;
   font-size: .875rem;
   font-weight: 600;
   color: $white2;
   cursor: pointer;
+  text-transform: uppercase;
 }

@@ -1,0 +1,44 @@
+@use "../../assets/styles/variables" as *;
+
+.side_panel {
+  padding: 2em;
+  background-color: $white2;
+  min-width: 30%;
+
+  @media (max-width: 820px) {
+    padding: 1.5em;
+    width: 120%;
+   }
+
+  @media (max-width: 450px) {
+    padding: 1.5em;
+    width: 100%;
+   }
+
+
+  .text {
+    font-weight: 600;
+  }
+
+  ul {
+    .top_ten_lit_item {
+      font-size: .9rem;
+      margin: 1em 0;
+
+      @media (max-width: 820px) {
+        font-size: .85rem;
+        margin: 1.2em 0;
+       }
+    
+
+      @media (max-width: 375px) {
+        font-size: .8rem;
+       }
+    
+
+      a {
+        color: $black2;
+      }
+    }
+  }
+}

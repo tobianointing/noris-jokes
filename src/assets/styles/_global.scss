@@ -1,6 +1,44 @@
+@use "variables" as *;
+
 body {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
+  background-color: $white;
 }
 
+header,
+section,
+footer {
+  padding: 0 10%;
+}
+
+@media (max-width: 820px) {
+  body {
+    font-size: 15px;
+  }
+
+  header,
+  section,
+  footer {
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    font-size: 14px;
+  }
+
+  header,
+  section,
+  footer {
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 13px;
+  }
+}

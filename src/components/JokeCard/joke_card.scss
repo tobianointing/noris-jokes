@@ -1,18 +1,36 @@
 @use "../../assets/styles/variables" as *;
 
-
 .joke_card_wrapper {
-    .header {
-        display: flex;
-        gap: .8em;
-        font-size: 1rem;
-        text-transform: uppercase;
-        color: $black;
-    }
+  background-color: $white2;
+  padding: 1em;
+  height: 264px;
+  position: relative;
+  border: 1px solid $white-three;
 
-    .body{
-        color: $black2;
-        margin: 1em 0; 
+  &:hover {
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.15);
+  }
 
-    }
+  .joke__card_header {
+    display: flex;
+    gap: 0.7em;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  .joke__card_body {
+    color: $black2;
+    margin: 1em 0;
+  }
+
+  .joke__card_footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: auto;
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+  }
 }

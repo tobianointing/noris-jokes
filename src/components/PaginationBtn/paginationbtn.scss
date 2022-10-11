@@ -1,0 +1,21 @@
+@use "../../assets/styles/variables" as *;
+
+.pagi_btn {
+  display: flex;
+  gap: 0.6em;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: $white2;
+  padding: 0.6em;
+  cursor: pointer;
+  color: $brown1;
+
+  @media (max-width: 375px) {
+    font-size: 0.7rem;
+  }
+}
+
+.transverse {
+  flex-direction: row-reverse;
+}

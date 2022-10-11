@@ -1,0 +1,51 @@
+@use "../../assets/styles/variables" as *;
+
+.singe_joke{
+    margin: 4em 0;
+
+    .single_joke_main {
+      display: flex;
+      gap: 1.5em;
+      margin: 2em 0 0;
+
+      @media (max-width: 450px) {
+       flex-direction: column;
+      }
+  
+
+      .card_footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 1em;
+
+        .like_btn__wrapper {
+          display: flex;
+          gap: 1em;
+        }
+
+        .pagi__wrapper{
+          display: flex;
+          align-items: flex-end;
+          gap: .6em;
+
+          @media (max-width: 450px) {
+            flex-direction: column;
+           }
+        }
+      }
+    }
+
+    .single_joke__nav {
+      display: flex;
+  
+    .back__btn_wrapper {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      background-color: $black;
+      padding: 1em 1.5em;
+      cursor: pointer;
+    }
+  }
+  
+}
+

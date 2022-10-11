@@ -8,8 +8,16 @@
     color: $white2;
     width: fit-content;
     padding: .3em .8em;
-    border-radius: 10px;
-    margin-bottom: 1em;
+    border-radius: 30px;
     font-size: .8rem;
     font-weight: 500;
+    text-transform: uppercase;
+
+    .cat_pill_img{
+      margin-right: .5em;
+    }
+
+    @media (max-width: 450px) {
+        font-size: .6rem;
+      }
 }
