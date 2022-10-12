@@ -14,12 +14,17 @@ import { JokeType } from "../../types"
 interface Props {
   joke: JokeType | null
   onClick: () => void
+  handleNext: () => void
+  handlePrev: () => void
+  index: number| null
 }
 
 export default function SingleJoke(props: Props) {
   const [likes, setLikes] = useState(0)
   const [dislikes, setDislikes] = useState(0)
+  
 
+  
   return (
     <section className="singe_joke">
       <nav className="single_joke__nav">
@@ -30,7 +35,7 @@ export default function SingleJoke(props: Props) {
 
       <div className="single_joke_main">
         <div className="card_wrapper">
-          <SingleJokeCard joke={props.joke} />
+          <SingleJokeCard joke={props.joke} index={props.index ?? 0} />
 
           <div className="card_footer">
             <div className="like_btn__wrapper">
@@ -39,8 +44,8 @@ export default function SingleJoke(props: Props) {
             </div>
 
             <div className="pagi__wrapper">
-              <PaginationBtn text="PREV JOKE" icon={prevBtn} isPrev={true} />
-              <PaginationBtn text="NEXT JOKE" icon={nextBtn} isPrev={false} />
+              <PaginationBtn text="PREV JOKE" icon={prevBtn} isPrev={true} onClick={props.handlePrev} />
+              <PaginationBtn text="NEXT JOKE" icon={nextBtn} isPrev={false} onClick={props.handleNext} />
             </div>
           </div>
         </div>

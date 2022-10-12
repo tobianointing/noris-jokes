@@ -6,6 +6,7 @@ import { JokeType } from "../../types"
 
 interface Props {
   joke: JokeType | null
+  index: number
 }
 
 export default function SingleJokeCard(props: Props) {
@@ -20,9 +21,9 @@ export default function SingleJokeCard(props: Props) {
       </div>
 
       <div className="title">
-        <h1 className="title__text">{props.joke?.categories[0]}</h1>
+        <h1 className="title__text">{props.joke?.categories[0] ?? "unknown"}</h1>
         <div className="line"></div>
-        <p className="position">NO #1</p>
+        <p className="position">NO #{props.index + 1}</p>
       </div>
 
       <p className="body">

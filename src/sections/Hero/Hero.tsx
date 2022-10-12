@@ -4,16 +4,24 @@ import SearchCard from "../../components/SearchCard/SearchCard"
 import { useState } from "react"
 import { useFetchData } from "../../hooks/useFetchData"
 
-export default function Hero() {
+interface Props {
+  handleSearch: (index: number, category: string) => void
+}
+
+export default function Hero(props: Props) {
   const [query, setQuery] = useState()
   const { data } = useFetchData(`search?query=${query}`, query)
 
-  const handleSearch = (e: any) => {
+  const handleSearchOnChange = (e: any) => {
     setQuery(e.target.value)
-    console.log(e.target.value)
+    
   }
 
-  
+  const handleSearch = (index: number, category: string) => {
+    setQuery(undefined)
+    props.handleSearch(index, category)
+  }
+
   return (
     <section className="hero">
       <h1 className="hero__title">The Joke Bible</h1>
@@ -25,9 +33,9 @@ export default function Hero() {
           name=""
           id=""
           placeholder="How can we make you laugh today?"
-          onChange={handleSearch}
+          onChange={handleSearchOnChange}
         />
-       {query && <SearchCard query={data}/>}
+        {query && <SearchCard query={data} handleSearch={handleSearch} />}
       </div>
     </section>
   )

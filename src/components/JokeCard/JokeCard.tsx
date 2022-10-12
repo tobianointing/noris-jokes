@@ -6,14 +6,13 @@ import { JokeType } from "../../types"
 
 type Props = {
   joke: JokeType
-  setJokeId: React.Dispatch<string|null>
+  setJokeId: (React.Dispatch<number | undefined>)
+  index: number
 }
 
 export default function JokeCard(props: Props) {
-  const truncateString = (string = '', maxLength = 500) => 
-  string.length > maxLength 
-    ? `${string.substring(0, maxLength)}…`
-    : string
+  const truncateString = (string = "", maxLength = 500) =>
+    string.length > maxLength ? `${string.substring(0, maxLength)}…` : string
 
   return (
     <div className="joke_card_wrapper">
@@ -22,12 +21,10 @@ export default function JokeCard(props: Props) {
         <h2 className="title">{props.joke.categories[0]} JOKE</h2>
       </div>
 
-      <div className="joke__card_body">
-        {truncateString(props.joke.value)}
-      </div>
+      <div className="joke__card_body">{truncateString(props.joke.value)}</div>
 
       <div className="joke__card_footer">
-        <BtnLink text={"SEE STATS"} onClick={() => props.setJokeId(props.joke.id)} />
+        <BtnLink text={"SEE STATS"} onClick={() => props.setJokeId(props.index)} />
       </div>
     </div>
   )

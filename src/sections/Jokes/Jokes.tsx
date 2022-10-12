@@ -8,7 +8,7 @@ import { JokeType } from "../../types"
 
 type Props = {
   data: JokeType[] | null
-  setJokeId: React.Dispatch<React.SetStateAction<string | null>>
+  setJokeId: React.Dispatch<React.SetStateAction<number | undefined>>
   selectedCategory: string
 }
 
@@ -24,8 +24,8 @@ export default function Jokes(props: Props) {
           {props?.data
             ? props.data
                 .slice(0, count)
-                .map((joke: any) => (
-                  <JokeCard joke={joke} key={joke.id} setJokeId={props.setJokeId} />
+                .map((joke: any, index) => (
+                  <JokeCard joke={joke} key={joke.id} index={index} setJokeId={props.setJokeId} />
                 ))
             : [...Array(4)].map((joke: any, index) => <Skeleton key={index} height={300} />)}
         </div>

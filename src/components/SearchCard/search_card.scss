@@ -8,8 +8,7 @@
   top: 3.75rem;
   padding: 0 0.8em 1em;
   border: 1px solid $ash;
-  // display: none;
-
+  transition: all 0.5s;
 
   &:after {
     content: "";
@@ -44,9 +43,8 @@
       text-transform: capitalize;
     }
 
-
     @media (max-width: 375px) {
-      .search__card_text{
+      .search__card_text {
         font-size: 0.7rem;
       }
     }
@@ -54,7 +52,7 @@
 }
 
 @media (max-width: 375px) {
-  .search__card{
+  .search__card {
     top: 3.3rem;
   }
 }
